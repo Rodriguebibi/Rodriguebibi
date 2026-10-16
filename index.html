@@ -286,7 +286,6 @@ html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}body{margin:
 .lrk .rows{display:grid;gap:16px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
 .lrk .row{display:flex;gap:16px;width:max-content;animation:rl var(--dur,90s) linear infinite}
 .lrk .row.back{animation-direction:reverse}
-.lrk .rows:hover .row{animation-play-state:paused}
 @keyframes rl{to{transform:translateX(calc(-50% - 8px))}}
 .lrk .rvw{width:380px;flex:none;border-radius:32px;padding:26px;background:var(--surface-solid);border:1px solid var(--line);display:flex;flex-direction:column;transition:border-color .3s}
 .lrk .rvw:hover{border-color:rgba(var(--accent-rgb),.5)}
@@ -1018,6 +1017,19 @@ html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}body{margin:
 .lrk .hero-media{max-width:480px;justify-self:end;width:100%}
 
 }
+.lrk .rows .row{animation-play-state:running!important}
+.lrk .qa-av{width:30px;height:30px;border-radius:50%;object-fit:cover;flex:none;box-shadow:0 0 0 2px #4D8BFF}
+.lrk .fl{background:linear-gradient(135deg,rgba(29,98,255,.62),rgba(12,22,70,.92))!important;border:1px solid rgba(141,178,255,.55)!important;box-shadow:0 0 0 4px rgba(15,98,255,.14),0 18px 40px -12px rgba(15,98,255,.65)!important;color:#fff}
+.lrk .fl small{color:#C9D6FF!important}
+.lrk .fl .tile{background:#fff!important;color:#0F62FF!important;border-color:transparent!important}
+.lrk .vid{width:380px!important}
+@media (max-width:1080px){.lrk .vid{width:320px!important}}
+@media (max-width:760px){.lrk .vid{width:min(330px,84vw)!important}}
+@media (max-width:380px){.lrk .vid{width:84vw!important}}
+@media (max-width:760px){.lrk .h1{font-size:clamp(34px,10.6vw,48px)!important;text-wrap:wrap!important;letter-spacing:-.05em;width:100%;max-width:none!important}
+.lrk .tcard{opacity:1!important;filter:none!important;transform:none!important}
+
+}
 
 
 </style>
@@ -1363,15 +1375,15 @@ html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}body{margin:
       <div class="chat-h"><span class="lgw"><img decoding="async" src="images/logo-light.webp" alt="" width="640" height="223" loading="lazy"></span><span><b>Lorick Innovation</b><small>En ligne</small></span></div>
       <div class="chat-b">
         <button class="qq" aria-expanded="false" aria-controls="a1">Combien de temps pour livrer un tunnel ?</button>
-        <div class="qa" id="a1"><p>En général, 3 à 7 jours ouvrés selon la complexité. Les délais convenus sont systématiquement respectés.</p><span class="mono">RL</span></div>
+        <div class="qa" id="a1"><p>En général, 3 à 7 jours ouvrés selon la complexité. Les délais convenus sont systématiquement respectés.</p><img decoding="async" class="qa-av" src="images/rv/me2.webp" alt="Rodrigue" width="120" height="120" loading="lazy"></div>
         <button class="qq" aria-expanded="false" aria-controls="a2">Je n'ai pas encore d'offre définie — peut-on collaborer ?</button>
-        <div class="qa" id="a2"><p>Absolument. On peut clarifier votre positionnement et construire votre offre ensemble avant de démarrer le tunnel.</p><span class="mono">RL</span></div>
+        <div class="qa" id="a2"><p>Absolument. On peut clarifier votre positionnement et construire votre offre ensemble avant de démarrer le tunnel.</p><img decoding="async" class="qa-av" src="images/rv/me2.webp" alt="Rodrigue" width="120" height="120" loading="lazy"></div>
         <button class="qq" aria-expanded="false" aria-controls="a3">Travaillez-vous uniquement sur Systeme.io ?</button>
-        <div class="qa" id="a3"><p>Non. Je travaille aussi sur ClickFunnels et j'adapte la prestation selon votre outil, avec un objectif : une livraison clé en main adaptée à votre situation.</p><span class="mono">RL</span></div>
+        <div class="qa" id="a3"><p>Non. Je travaille aussi sur ClickFunnels et j'adapte la prestation selon votre outil, avec un objectif : une livraison clé en main adaptée à votre situation.</p><img decoding="async" class="qa-av" src="images/rv/me2.webp" alt="Rodrigue" width="120" height="120" loading="lazy"></div>
         <button class="qq" aria-expanded="false" aria-controls="a4">Des révisions sont-elles incluses ?</button>
-        <div class="qa" id="a4"><p>Oui. Des révisions sont incluses dans chaque prestation. Je travaille jusqu'à votre satisfaction complète.</p><span class="mono">RL</span></div>
+        <div class="qa" id="a4"><p>Oui. Des révisions sont incluses dans chaque prestation. Je travaille jusqu'à votre satisfaction complète.</p><img decoding="async" class="qa-av" src="images/rv/me2.webp" alt="Rodrigue" width="120" height="120" loading="lazy"></div>
         <button class="qq" aria-expanded="false" aria-controls="a5">Proposez-vous un suivi après livraison ?</button>
-        <div class="qa" id="a5"><p>Oui. Je propose des formules de maintenance et d'optimisation continue pour un accompagnement sur le long terme.</p><span class="mono">RL</span></div>
+        <div class="qa" id="a5"><p>Oui. Je propose des formules de maintenance et d'optimisation continue pour un accompagnement sur le long terme.</p><img decoding="async" class="qa-av" src="images/rv/me2.webp" alt="Rodrigue" width="120" height="120" loading="lazy"></div>
       </div>
     </div>
   </div>
@@ -1422,7 +1434,8 @@ html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}body{margin:
   if(!reduce&&'IntersectionObserver' in window){
     var els=[].slice.call(document.querySelectorAll('.rv'));els.forEach(function(e){if(e.getBoundingClientRect().top>innerHeight*.92)e.classList.add('pre');});
     var spl=[].slice.call(document.querySelectorAll('.split'));spl.forEach(function(e){if(e.getBoundingClientRect().top>innerHeight*.92)e.classList.add('pre-w');});
-    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.remove('pre');x.target.classList.remove('pre-w');io.unobserve(x.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.remove('pre');x.target.classList.remove('pre-w');io.unobserve(x.target);}});},{threshold:0,rootMargin:'0px 0px -30px 0px'});
+    var sweep=function(){var lim=innerHeight*1.05;document.querySelectorAll('.pre,.pre-w').forEach(function(e){if(e.classList.contains('hid')||e.closest('.hid'))return;var r=e.getBoundingClientRect();if(r.top<lim&&r.bottom>-50){e.classList.remove('pre');e.classList.remove('pre-w');}});};onS(sweep);setInterval(sweep,1200);
     els.concat(spl).forEach(function(e){io.observe(e);});
     var ioc=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){count(x.target);ioc.unobserve(x.target);}});},{threshold:.6});
     document.querySelectorAll('[data-to]').forEach(function(e){ioc.observe(e);});
