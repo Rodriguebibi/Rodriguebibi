@@ -1099,7 +1099,7 @@ html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}body{margin:
 }
 .lrk .mbr{display:none}
 @media (max-width:760px){.lrk .mbr{display:block}
-.lrk .h1{font-size:min(8.1vw,40px)!important;line-height:1.08!important;letter-spacing:-.045em;text-wrap:nowrap!important;white-space:nowrap;max-width:none!important}
+.lrk .h1{font-size:min(8.9vw,44px)!important;line-height:1.08!important;letter-spacing:-.045em;text-wrap:nowrap!important;white-space:nowrap;max-width:none!important}
 .lrk .h1 .chip{transform:scale(.82);margin-inline:-.06em}
 
 }
@@ -1248,7 +1248,7 @@ html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}body{margin:
     <div class="hero-grid">
       <div class="hero-tx">
         <span class="badge"><b><svg class="i"><use href="#i-star"/></svg></b>TOP FREELANCE SUR COMEUP</span>
-        <h1 class="h1" id="h1"><span class="w" style="animation-delay:0.05s">Des</span> <span class="chip" aria-hidden="true"><svg class="i on"><use href="#h-funnel"/></svg><svg class="i"><use href="#h-cursor"/></svg><svg class="i"><use href="#h-mail"/></svg><svg class="i"><use href="#i-chart"/></svg></span> <span class="w" style="animation-delay:0.11s">tunnels</span> <span class="w" style="animation-delay:0.17s">de</span> <span class="w" style="animation-delay:0.23s">vente</span><br class="mbr"> <span class="w" style="animation-delay:0.29s">qui</span> <span class="w" style="animation-delay:0.35s">transforment</span> <span class="w" style="animation-delay:0.41s">votre</span><br class="mbr"> <span class="w" style="animation-delay:0.47s">trafic</span> <span class="w hk" style="animation-delay:0.53s">en</span> <span class="w hk" style="animation-delay:0.59s">clients.</span></h1>
+        <h1 class="h1" id="h1"><span class="w" style="animation-delay:0.05s">Des</span> <span class="w" style="animation-delay:0.11s">tunnels</span> <span class="w" style="animation-delay:0.17s">de</span> <span class="w" style="animation-delay:0.23s">vente</span><br class="mbr"> <span class="w" style="animation-delay:0.29s">qui</span> <span class="w" style="animation-delay:0.35s">transforment</span> <span class="w" style="animation-delay:0.41s">votre</span><br class="mbr"> <span class="w" style="animation-delay:0.47s">trafic</span> <span class="w hk" style="animation-delay:0.53s">en</span> <span class="w hk" style="animation-delay:0.59s">clients.</span></h1>
         <p class="sub"><strong>Vous payez le trafic. Arrêtez de le gaspiller.</strong> Je conçois et construis vos tunnels de vente, landing pages et pages de capture sur Systeme.io &amp; ClickFunnels, sur-mesure et livrés clé en main. Plus de 600 entrepreneurs m’ont déjà fait confiance.</p>
         <div class="hero-cta">
           <a class="btn" href="https://wa.me/447878640409" data-wa target="_blank" rel="noopener"><i class="shine" aria-hidden="true"></i><span>Je veux un tunnel qui vend</span><svg class="i"><use href="#i-arrow"/></svg></a>
@@ -1520,7 +1520,7 @@ html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}body{margin:
   var mn=document.getElementById('mnav');document.getElementById('burger').addEventListener('click',function(){mn.classList.toggle('open');});
   mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mn.classList.remove('open');});});
   var ic=[].slice.call(document.querySelectorAll('.chip svg')),ci=0;
-  if(!reduce)setInterval(function(){var a=ic[ci];a.classList.remove('on');a.classList.add('out');setTimeout(function(){a.classList.remove('out');},600);ci=(ci+1)%ic.length;ic[ci].classList.add('on');},1800);
+  if(!reduce&&ic.length)setInterval(function(){var a=ic[ci];a.classList.remove('on');a.classList.add('out');setTimeout(function(){a.classList.remove('out');},600);ci=(ci+1)%ic.length;ic[ci].classList.add('on');},1800);
   function wrapWords(h,cls,fn){var k=0;(function walk(n){[].slice.call(n.childNodes).forEach(function(c){if(c.nodeType===3){var f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(function(p){if(!p)return;if(/^\s+$/.test(p)){f.appendChild(document.createTextNode(p));return;}var s=document.createElement('span');s.className=cls;fn(s,n,k++);s.textContent=p;f.appendChild(s);});c.parentNode.replaceChild(f,c);}else if(c.nodeType===1)walk(c);});})(h);}
   document.querySelectorAll('.split').forEach(function(h){wrapWords(h,'sw',function(s,n,k){s.style.setProperty('--i',k);});});
   var say=document.getElementById('say');wrapWords(say,'w2',function(s,n){if(n.classList&&n.classList.contains('k'))s.classList.add('k');});
