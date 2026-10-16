@@ -905,7 +905,7 @@ html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}body{margin:
 .lrk .svc2-b .btn{margin-top:auto;align-self:flex-start}
 @media (max-width:960px){.lrk .svs2{grid-template-columns:1fr 1fr}
 .lrk .svc2,.lrk .svc2:nth-child(4),.lrk .svc2:nth-child(5){grid-column:auto}
-.lrk .svc2:nth-child(5){grid-column:1/-1;max-width:calc(50% - 10px);justify-self:center}}
+.lrk .svc2:nth-child(5){grid-column:1/-1;width:calc(50% - 10px);max-width:calc(50% - 10px);justify-self:center}}
 @media (max-width:640px){.lrk .svs2{grid-template-columns:1fr}
 .lrk .svc2:nth-child(5){max-width:none}}
 @media (hover:none),(pointer:coarse){.lrk .work .scr{overflow:hidden!important;touch-action:auto!important}
@@ -1070,6 +1070,13 @@ html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}body{margin:
 @media (max-width:640px){.lrk .svs2{grid-template-columns:minmax(0,1fr)!important}
 .lrk .svc2:nth-child(5){max-width:100%!important;grid-column:auto!important}}
 .lrk .works>*,.lrk .secs>*,.lrk .kpis>*,.lrk .psy>*{min-width:0}
+@media (max-width:640px){.lrk .svs2{display:flex!important;flex-direction:column;gap:18px;width:100%;max-width:100%}
+.lrk .svc2,.lrk .svc2:nth-child(4),.lrk .svc2:nth-child(5){width:100%!important;max-width:100%!important;min-width:0!important;justify-self:stretch!important;align-self:stretch!important;grid-column:auto!important;flex:none}
+.lrk .svc2-img{width:100%;aspect-ratio:840/480!important;height:auto}
+.lrk .svc2-img img{width:100%!important;height:100%!important;max-width:100%!important;object-fit:contain}
+.lrk .svc2:hover{transform:none}
+
+}
 
 
 </style>
