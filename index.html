@@ -1027,7 +1027,6 @@ html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}body{margin:
 @media (max-width:760px){.lrk .vid{width:min(330px,84vw)!important}}
 @media (max-width:380px){.lrk .vid{width:84vw!important}}
 @media (max-width:760px){.lrk .h1{font-size:clamp(34px,10.6vw,48px)!important;text-wrap:wrap!important;letter-spacing:-.05em;width:100%;max-width:none!important}
-.lrk .tcard{opacity:1!important;filter:none!important;transform:none!important}
 
 }
 .lrk{overflow-x:hidden}
@@ -1044,7 +1043,6 @@ html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}body{margin:
 .lrk .split.pre-w .sw{opacity:1!important;transform:none!important;filter:none!important}
 .lrk .work.pre-pin{opacity:1!important;transform:none!important}
 .lrk .work.pre-pin .pin2 svg,.lrk .work.pre-pin .pin-sh{opacity:1!important}
-.lrk .tcard{opacity:1!important;filter:none!important}
 .lrk .rows{min-height:0}
 
 }
@@ -1075,6 +1073,22 @@ html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}body{margin:
 .lrk .svc2-img{width:100%;aspect-ratio:840/480!important;height:auto}
 .lrk .svc2-img img{width:100%!important;height:100%!important;max-width:100%!important;object-fit:contain}
 .lrk .svc2:hover{transform:none}
+
+}
+.lrk .mbr{display:none}
+@media (max-width:760px){.lrk .mbr{display:block}
+.lrk .h1{font-size:min(8.1vw,40px)!important;line-height:1.08!important;letter-spacing:-.045em;text-wrap:nowrap!important;white-space:nowrap;max-width:none!important}
+.lrk .h1 .chip{transform:scale(.82);margin-inline:-.06em}
+
+}
+@media (max-width:960px),(hover:none){.lrk .tst .tcard{opacity:0;filter:blur(8px);transform:translateY(50px) scale(.92) rotate(2deg)!important;transition:opacity .7s var(--ease),transform .9s var(--spring),filter .7s var(--ease),border-color .5s,box-shadow .6s}
+.lrk .tst.L .tcard{transform:translate(-26px,50px) scale(.92) rotate(-3deg)!important}
+.lrk .tst.R .tcard{transform:translate(26px,50px) scale(.92) rotate(3deg)!important}
+.lrk .tst.vis .tcard{opacity:1;filter:none;transform:none!important;border-color:rgba(var(--accent-rgb),.4);box-shadow:0 40px 80px -40px rgba(var(--accent-rgb),.55)}
+.lrk .tst .tnode{transition:transform .6s var(--spring),background .4s,box-shadow .5s}
+.lrk .tst.vis .tnode{background:linear-gradient(180deg,var(--accent-light),var(--accent) 50%,var(--accent-dark));border-color:transparent;transform:scale(1.12);box-shadow:0 0 0 8px rgba(var(--accent-rgb),.14),0 14px 34px rgba(var(--accent-rgb),.55)}
+.lrk .tst.vis .tnode span{color:#fff}
+.lrk .tree{overflow:hidden}
 
 }
 
@@ -1198,7 +1212,7 @@ html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}body{margin:
     <div class="hero-grid">
       <div class="hero-tx">
         <span class="badge"><b><svg class="i"><use href="#i-star"/></svg></b>TOP FREELANCE SUR COMEUP</span>
-        <h1 class="h1" id="h1"><span class="w" style="animation-delay:0.05s">Des</span> <span class="chip" aria-hidden="true"><svg class="i on"><use href="#h-funnel"/></svg><svg class="i"><use href="#h-cursor"/></svg><svg class="i"><use href="#h-mail"/></svg><svg class="i"><use href="#i-chart"/></svg></span> <span class="w" style="animation-delay:0.11s">tunnels</span> <span class="w" style="animation-delay:0.17s">de</span> <span class="w" style="animation-delay:0.23s">vente</span> <span class="w" style="animation-delay:0.29s">qui</span> <span class="w" style="animation-delay:0.35s">transforment</span> <span class="w" style="animation-delay:0.41s">votre</span> <span class="w" style="animation-delay:0.47s">trafic</span> <span class="w hk" style="animation-delay:0.53s">en</span> <span class="w hk" style="animation-delay:0.59s">clients.</span></h1>
+        <h1 class="h1" id="h1"><span class="w" style="animation-delay:0.05s">Des</span> <span class="chip" aria-hidden="true"><svg class="i on"><use href="#h-funnel"/></svg><svg class="i"><use href="#h-cursor"/></svg><svg class="i"><use href="#h-mail"/></svg><svg class="i"><use href="#i-chart"/></svg></span> <span class="w" style="animation-delay:0.11s">tunnels</span> <span class="w" style="animation-delay:0.17s">de</span> <span class="w" style="animation-delay:0.23s">vente</span><br class="mbr"> <span class="w" style="animation-delay:0.29s">qui</span> <span class="w" style="animation-delay:0.35s">transforment</span> <span class="w" style="animation-delay:0.41s">votre</span><br class="mbr"> <span class="w" style="animation-delay:0.47s">trafic</span> <span class="w hk" style="animation-delay:0.53s">en</span> <span class="w hk" style="animation-delay:0.59s">clients.</span></h1>
         <p class="sub"><strong>Vous payez le trafic. Arrêtez de le gaspiller.</strong> Je conçois et construis vos tunnels de vente, landing pages et pages de capture sur Systeme.io &amp; ClickFunnels, sur-mesure et livrés clé en main. Plus de 600 entrepreneurs m’ont déjà fait confiance.</p>
         <div class="hero-cta">
           <a class="btn" href="https://wa.me/447878640409" data-wa target="_blank" rel="noopener"><i class="shine" aria-hidden="true"></i><span>Je veux un tunnel qui vend</span><svg class="i"><use href="#i-arrow"/></svg></a>
@@ -1626,21 +1640,27 @@ html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}body{margin:
   function openQ(i){qs.forEach(function(q,k){var on=k===i&&q.getAttribute('aria-expanded')!=='true';q.setAttribute('aria-expanded',String(on));document.getElementById(q.getAttribute('aria-controls')).classList.toggle('open',on);});}
   qs.forEach(function(q,i){q.addEventListener('click',function(){openQ(i);});q.addEventListener('keydown',function(e){if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();qs[(i+(e.key==='ArrowDown'?1:-1)+qs.length)%qs.length].focus();}});});
   openQ(0);
+  (function(){var ts=[].slice.call(document.querySelectorAll('#tree .tst'));if(!('IntersectionObserver' in window)){ts.forEach(function(t){t.classList.add('vis');});return;}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('vis',e.isIntersecting);});},{threshold:.2,rootMargin:'-8% 0px -12% 0px'});ts.forEach(function(t){io.observe(t);});})();
   var cv=document.getElementById('dots'),hero=document.getElementById('hero');
-  if(cv.getContext){var ctx=cv.getContext('2d'),G=38,W,H,dpr,m={x:-1e4,y:-1e4,tx:-1e4,ty:-1e4},vis=true,run=0,t0=performance.now(),fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+  if(cv.getContext){var ctx=cv.getContext('2d'),fine=matchMedia('(hover:hover) and (pointer:fine)').matches,G=fine?38:30,W,H,dpr,m={x:-1e4,y:-1e4,tx:-1e4,ty:-1e4},vis=true,run=0,t0=performance.now(),lastY=scrollY,vel=0,tUp=0;
     function size(){dpr=Math.min(2,devicePixelRatio||1);var r=hero.getBoundingClientRect();W=r.width;H=r.height;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);}
-    function draw(now){run=0;if(!vis)return;m.x+=(m.tx-m.x)*.12;m.y+=(m.ty-m.y)*.12;ctx.clearRect(0,0,W,H);var tt=(now-t0)/1000,off=(scrollY*.35)%G;
-      for(var y=-G;y<H+G;y+=G){for(var x=0;x<W+G;x+=G){var py=y-off+Math.sin(tt*.8+x*.01)*2,dx=x-m.x,dy=py-m.y,d=Math.sqrt(dx*dx+dy*dy),k=Math.max(0,1-d/170);
-        var ex=(W*.35-x)/(W*.7),ey=(H*.3-py)/(H*.75),fade=Math.max(0,1-(ex*ex+ey*ey));if(fade<=0&&k<=0)continue;
-        var px=x+(d>0?dx/d:0)*16*k,pyy=py+(d>0?dy/d:0)*16*k;ctx.beginPath();ctx.arc(px,pyy,1+k*2,0,6.283);
-        ctx.fillStyle=k>0?'rgba(255,225,0,'+(0.15+k*.75)+')':'rgba(255,255,255,'+(0.16*fade)+')';ctx.fill();}}
-      if(!reduce&&(fine||Math.abs(m.tx-m.x)>.5||Math.abs(m.ty-m.y)>.5))run=requestAnimationFrame(draw);}
+    function draw(now){run=0;if(!vis)return;var tt=(now-t0)/1000;
+      if(!fine){var dy0=scrollY-lastY;lastY=scrollY;vel+=(Math.min(40,Math.abs(dy0))-vel)*.15;
+        if(m.tx<-1e3||now-tUp>900){/* point lumineux qui balaie le hero */var a=tt*.45;m.tx=W*(.5+.38*Math.sin(a));m.ty=H*(.28+.22*Math.sin(a*1.7));}}
+      m.x+=(m.tx-m.x)*(fine?.12:.06);m.y+=(m.ty-m.y)*(fine?.12:.06);ctx.clearRect(0,0,W,H);var off=(scrollY*.35)%G,R=fine?170:120,base=fine?.16:.30,amp=fine?2:3+vel*.25;
+      for(var y=-G;y<H+G;y+=G){for(var x=0;x<W+G;x+=G){var py=y-off+Math.sin(tt*(fine?.8:1.6)+x*.012+y*.004)*amp,dx=x-m.x,dy=py-m.y,d=Math.sqrt(dx*dx+dy*dy),k=Math.max(0,1-d/R);
+        var ex=(W*(fine?.35:.5)-x)/(W*(fine?.7:.9)),ey=(H*(fine?.3:.3)-py)/(H*(fine?.75:.9)),fade=Math.max(fine?0:.25,1-(ex*ex+ey*ey));if(fade<=0&&k<=0)continue;
+        var px=x+(d>0?dx/d:0)*16*k,pyy=py+(d>0?dy/d:0)*16*k;ctx.beginPath();ctx.arc(px,pyy,(fine?1:1.15)+k*2,0,6.283);
+        ctx.fillStyle=k>0?'rgba(255,225,0,'+(0.15+k*.75)+')':'rgba(255,255,255,'+(base*fade)+')';ctx.fill();}}
+      if(!reduce&&(!fine||Math.abs(m.tx-m.x)>.5||Math.abs(m.ty-m.y)>.5||fine))run=requestAnimationFrame(draw);}
     size();addEventListener('resize',size);
     if(fine){hero.addEventListener('pointermove',function(e){var r=cv.getBoundingClientRect();m.tx=e.clientX-r.left;m.ty=e.clientY-r.top;});hero.addEventListener('pointerleave',function(){m.tx=m.ty=-1e4;});}
+    else{var tp=function(e){var t=e.touches?e.touches[0]:e;if(!t)return;var r=cv.getBoundingClientRect();m.tx=t.clientX-r.left;m.ty=t.clientY-r.top;tUp=performance.now();};hero.addEventListener('touchstart',tp,{passive:true});hero.addEventListener('touchmove',tp,{passive:true});}
     new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis&&!run)run=requestAnimationFrame(draw);}).observe(hero);
     run=requestAnimationFrame(draw);
     function kick(){if(vis&&!run)run=requestAnimationFrame(draw);}
-    if(fine)hero.addEventListener('pointermove',kick);onS(function(){if(scrollY<innerHeight)kick();});}
+    if(fine)hero.addEventListener('pointermove',kick);onS(function(){if(scrollY<innerHeight*1.5)kick();});}
 })();
 </script>
 
