@@ -1127,6 +1127,24 @@ html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}body{margin:
 .lrk .hero .dots{z-index:0!important}
 .lrk .hero .badge,.lrk .hero .h1,.lrk .hero .sub,.lrk .hero .hero-cta,.lrk .hero .hstats,.lrk .hero .trust,.lrk .hero .skills,.lrk .hero .hero-media{position:relative;z-index:2}
 .lrk .hero .h1,.lrk .hero .sub,.lrk .hero .trust,.lrk .hero .hstats{text-shadow:0 0 14px rgba(8,10,20,.95),0 0 3px rgba(8,10,20,.9)}
+.lrk .rows .row{animation:none!important}
+@media (min-width:961px) and (max-width:1120px){.lrk .nav ul{display:none}
+.lrk .burger{display:grid}
+.lrk .nav .btn{display:none}
+
+}
+@media (min-width:761px) and (max-width:1080px){.lrk .mbr{display:block}
+.lrk .h1{max-width:none!important;width:100%;font-size:min(6.4vw,66px)!important;line-height:1.04!important;white-space:nowrap;text-wrap:nowrap!important;margin-inline:auto}
+.lrk .say-meta>div{flex:1 1 calc(50% - 7px);max-width:calc(50% - 7px)}
+
+}
+@media (max-width:1180px){.lrk .polar{left:2%}}
+@media (min-width:431px) and (max-width:760px){.lrk .secs{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.lrk .secs .card{justify-content:flex-start}
+.lrk .secs .card.you{grid-column:1/-1}
+.lrk .say-meta>div{flex:1 1 100%;max-width:440px}
+
+}
 
 
 </style>
@@ -1671,7 +1689,24 @@ html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}body{margin:
   });
   lb.addEventListener('click',function(e){if(e.target!==lbi)closeLb();});
   addEventListener('keydown',function(e){if(e.key==='Escape')closeLb();});
-  document.querySelectorAll('.row').forEach(function(r){var n=r.children.length;r.innerHTML+=r.innerHTML;[].slice.call(r.children).slice(n).forEach(function(c){c.setAttribute('aria-hidden','true');});});
+  /* avis : défilement continu piloté en JS (recyclage des cartes, jamais de trou) */
+  (function(){var rows=[].slice.call(document.querySelectorAll('.row'));if(!rows.length)return;var GAP=16,vis=true,last=0;
+    var st=rows.map(function(r){var back=r.classList.contains('back');r.style.animation='none';r.style.willChange='transform';
+      /* assez de cartes pour couvrir 2 écrans */
+      var orig=[].slice.call(r.children),w=function(){return r.scrollWidth;};var guard=0;while(w()<Math.max(innerWidth*2.2,2400)&&guard++<4){orig.forEach(function(c){var k=c.cloneNode(true);k.setAttribute('aria-hidden','true');r.appendChild(k);});}
+      return {r:r,back:back,x:0,v:back?43:50};});
+    function step(o){var f=o.r.firstElementChild,l=o.r.lastElementChild;if(!f)return;
+      if(!o.back){var fw=f.offsetWidth+GAP;while(-o.x>=fw){o.r.appendChild(f);o.x+=fw;f=o.r.firstElementChild;fw=f.offsetWidth+GAP;}}
+      else{while(o.x>0){var lw=l.offsetWidth+GAP;o.r.insertBefore(l,o.r.firstElementChild);o.x-=lw;l=o.r.lastElementChild;}}
+      o.r.style.transform='translate3d('+o.x.toFixed(2)+'px,0,0)';}
+    st.forEach(function(o){if(o.back){o.x=-(o.r.firstElementChild.offsetWidth+GAP)*3;}step(o);});
+    function tick(t){if(!vis){last=0;return;}var dt=last?Math.min(.05,(t-last)/1000):0;last=t;
+      st.forEach(function(o){o.x+=(o.back?1:-1)*o.v*dt;step(o);});requestAnimationFrame(tick);}
+    var box=document.getElementById('rows');
+    if('IntersectionObserver' in window){new IntersectionObserver(function(es){var was=vis;vis=es[0].isIntersecting;if(vis&&!was){last=0;requestAnimationFrame(tick);}},{rootMargin:'200px 0px'}).observe(box);}
+    document.addEventListener('visibilitychange',function(){if(!document.hidden&&vis){last=0;requestAnimationFrame(tick);}});
+    if(!reduce)requestAnimationFrame(tick);
+  })();
   var qs=[].slice.call(document.querySelectorAll('.qq'));
   function openQ(i){qs.forEach(function(q,k){var on=k===i&&q.getAttribute('aria-expanded')!=='true';q.setAttribute('aria-expanded',String(on));document.getElementById(q.getAttribute('aria-controls')).classList.toggle('open',on);});}
   qs.forEach(function(q,i){q.addEventListener('click',function(){openQ(i);});q.addEventListener('keydown',function(e){if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();qs[(i+(e.key==='ArrowDown'?1:-1)+qs.length)%qs.length].focus();}});});
