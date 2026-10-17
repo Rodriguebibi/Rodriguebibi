@@ -1145,6 +1145,18 @@ html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}body{margin:
 .lrk .say-meta>div{flex:1 1 100%;max-width:440px}
 
 }
+.lrk .sec.light{--bg:#F4F5FA;--surface:rgba(255,255,255,.9);--surface-solid:#FFFFFF;--surface-2:rgba(10,12,11,.035);--text:#0D0E14;--muted:#5E6478;--dim:#8C92A6;--line:rgba(10,12,11,.08);--line-strong:rgba(10,12,11,.16);--glass:rgba(255,255,255,.75);--glass-border:rgba(10,12,11,.08);--bubble:#E8EAF2;--mint:#0645C9;--hl:#0645C9;
+  color:var(--text);margin:24px max(30px,env(safe-area-inset-right,0px)) 24px max(30px,env(safe-area-inset-left,0px));border-radius:40px;overflow:hidden;isolation:isolate;padding-block:96px!important;
+  background:radial-gradient(70% 55% at 10% 0%,rgba(15,98,255,.16),transparent 62%),radial-gradient(55% 45% at 96% 100%,rgba(255,225,0,.16),transparent 65%),linear-gradient(180deg,#F7F8FC,#EEF1F8)}
+.lrk .sec.light::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(rgba(10,12,20,.07) 1px,transparent 1px);background-size:26px 26px;-webkit-mask-image:radial-gradient(70% 60% at 50% 40%,#000,transparent);mask-image:radial-gradient(70% 60% at 50% 40%,#000,transparent)}
+.lrk .sec.light .wm{-webkit-text-stroke:1px rgba(15,98,255,.14);background:linear-gradient(180deg,rgba(15,98,255,.08),transparent 80%);-webkit-background-clip:text;background-clip:text}
+.lrk .sec.light .card,.lrk .sec.light .svc2,.lrk .sec.light .cu-r,.lrk .sec.light .vs-c,.lrk .sec.light .vs>*{background:#fff;border-color:rgba(10,12,20,.08);box-shadow:0 18px 40px -26px rgba(14,30,80,.3)}
+.lrk .sec.light .label{color:#5E6478}
+.lrk .sec.light h2,.lrk .sec.light h3{color:var(--text)}
+.lrk .sec.light p{color:var(--muted)}
+.lrk .sec.light .rows::before{background:linear-gradient(90deg,#F2F4F9,transparent)}
+.lrk .sec.light .rows::after{background:linear-gradient(270deg,#F2F4F9,transparent)}
+@media (max-width:760px){.lrk .sec.light{margin:14px max(12px,env(safe-area-inset-right,0px)) 14px max(12px,env(safe-area-inset-left,0px));border-radius:30px;padding-block:64px!important}}
 
 
 </style>
@@ -1312,7 +1324,7 @@ html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}body{margin:
 
 <hr class="rule">
 
-<section class="sec" id="pourquoi" aria-labelledby="h-why"><span class="wm" aria-hidden="true">PARTENAIRE</span>
+<section class="sec light" id="pourquoi" aria-labelledby="h-why"><span class="wm" aria-hidden="true">PARTENAIRE</span>
   <div class="wrap">
     <div class="head"><span class="label rv">Pourquoi choisir Lorick Innovation</span><h2 class="h2 rv split" id="h-why">Un partenaire tunnel, <span class="hl">pas un simple prestataire.</span></h2></div>
     <p class="lv-hint sv-hint"><span class="hand"><svg class="i"><use href="#h-cursor"/></svg></span>Touchez un onglet, glissez pour voir les autres</p>
@@ -1356,7 +1368,7 @@ html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}body{margin:
 
 <hr class="rule">
 
-<section class="sec" aria-labelledby="h-vs">
+<section class="sec light" aria-labelledby="h-vs">
   <div class="wrap">
     <div class="head"><span class="label rv">Pourquoi travailler avec moi</span><h2 class="h2 rv split" id="h-vs">Je maximise vos conversions, <span class="hl">pas seulement vos pages.</span></h2><p class="lead rv">Vous avez deux options. Un livrable standard, joli mais muet, qui ressemble à des centaines d’autres déjà vus. <b style="color:var(--text);font-weight:500">Ou un partenaire qui s’investit dans votre résultat comme si c’était le sien.</b> À vous de choisir ce que vous attendez de votre tunnel.</p></div>
     <div class="vs rv" id="vs">
@@ -1398,7 +1410,7 @@ html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}body{margin:
   </div>
 </section>
 
-<section class="sec" id="avis" style="padding-top:0" aria-labelledby="h-av"><span class="wm" aria-hidden="true">CONFIANCE</span>
+<section class="sec light" id="avis" aria-labelledby="h-av"><span class="wm" aria-hidden="true">CONFIANCE</span>
   <div class="wrap">
     <div class="head"><span class="label rv">Avis vérifiés sur ComeUp</span><h2 class="h2 rv split" id="h-av">Ils hésitaient, comme vous. <span class="hl">Ils en parlent mieux que moi.</span></h2></div>
     <div class="score rv"><span><span class="stars"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.5 1.3 6.5L12 17.1l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z" fill="url(#gstar)"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.5 1.3 6.5L12 17.1l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z" fill="url(#gstar)"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.5 1.3 6.5L12 17.1l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z" fill="url(#gstar)"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.5 1.3 6.5L12 17.1l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z" fill="url(#gstar)"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.5 1.3 6.5L12 17.1l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z" fill="url(#gstar)"/></svg></span><b style="font-weight:600">35 avis</b> vérifiés sur ComeUp</span></div>
@@ -1440,7 +1452,7 @@ html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}body{margin:
   </div>
 </section>
 
-<section class="sec" id="services" style="padding-top:20px" aria-labelledby="h-sv"><span class="wm" aria-hidden="true">SERVICES</span>
+<section class="sec light" id="services" aria-labelledby="h-sv"><span class="wm" aria-hidden="true">SERVICES</span>
   <div class="wrap">
     <div class="head"><span class="label rv">Mes services</span><h2 class="h2 rv split" id="h-sv">Tout ce qu’il faut pour vendre en ligne, <span class="hl">au même endroit.</span></h2><p class="lead rv">Tunnel, page de capture, boutique, publicité ou site : choisissez ce dont votre business a besoin. Satisfaction garantie, retouches illimitées.</p></div>
     <div class="svs2" id="svs"><article class="svc2 rv" style="--d:0ms"><div class="svc2-img"><img decoding="async" src="images/s/s1.webp" alt="Service Lorick Innovation : Tunnel de vente" width="840" height="480" loading="lazy"></div><div class="svc2-b"><span class="svx-tag">Systeme.io</span><h3>Tunnel de vente</h3><p>Votre tunnel complet, de la première page au paiement : pages, e-mails, relances et upsells. Il vend pendant que vous dormez.</p><ul><li><svg class="i"><use href="#i-check"/></svg>Retouches illimitées</li><li><svg class="i"><use href="#i-check"/></svg>Personnalisation complète</li></ul><a class="btn btn-sm" href="https://wa.me/447878640409" data-wa target="_blank" rel="noopener"><span>Je veux ce service</span><svg class="i"><use href="#i-arrow"/></svg></a></div></article><article class="svc2 rv" style="--d:90ms"><div class="svc2-img"><img decoding="async" src="images/s/s2.webp" alt="Service Lorick Innovation : Landing page ou page de capture" width="840" height="480" loading="lazy"></div><div class="svc2-b"><span class="svx-tag">Systeme.io</span><h3>Landing page ou page de capture</h3><p>Une page qui transforme vos visiteurs en prospects : un message clair, une promesse forte, un formulaire qui donne envie de s’inscrire.</p><ul><li><svg class="i"><use href="#i-check"/></svg>Retouches illimitées</li><li><svg class="i"><use href="#i-check"/></svg>Personnalisation complète</li></ul><a class="btn btn-sm" href="https://wa.me/447878640409" data-wa target="_blank" rel="noopener"><span>Je veux ce service</span><svg class="i"><use href="#i-arrow"/></svg></a></div></article><article class="svc2 rv" style="--d:180ms"><div class="svc2-img"><img decoding="async" src="images/s/s3.webp" alt="Service Lorick Innovation : Boutique Shopify" width="840" height="480" loading="lazy"></div><div class="svc2-b"><span class="svx-tag">E-commerce</span><h3>Boutique Shopify</h3><p>Une boutique prête à vendre : des fiches produits qui donnent envie, une commande fluide et un paiement qui rassure.</p><ul><li><svg class="i"><use href="#i-check"/></svg>Retouches illimitées</li><li><svg class="i"><use href="#i-check"/></svg>Personnalisation complète</li></ul><a class="btn btn-sm" href="https://wa.me/447878640409" data-wa target="_blank" rel="noopener"><span>Je veux ce service</span><svg class="i"><use href="#i-arrow"/></svg></a></div></article><article class="svc2 rv" style="--d:0ms"><div class="svc2-img"><img decoding="async" src="images/s/s4.webp" alt="Service Lorick Innovation : Campagne publicitaire" width="840" height="480" loading="lazy"></div><div class="svc2-b"><span class="svx-tag">Facebook Ads</span><h3>Campagne publicitaire</h3><p>Vos publicités Facebook et Instagram créées et pilotées au quotidien, avec pixel et retargeting pour ne laisser filer aucun visiteur.</p><ul><li><svg class="i"><use href="#i-check"/></svg>Gestion au quotidien</li><li><svg class="i"><use href="#i-check"/></svg>Pixels et retargeting</li></ul><a class="btn btn-sm" href="https://wa.me/447878640409" data-wa target="_blank" rel="noopener"><span>Je veux ce service</span><svg class="i"><use href="#i-arrow"/></svg></a></div></article><article class="svc2 rv" style="--d:90ms"><div class="svc2-img"><img decoding="async" src="images/s/s5.webp" alt="Service Lorick Innovation : Site web WordPress" width="840" height="480" loading="lazy"></div><div class="svc2-b"><span class="svx-tag">WordPress</span><h3>Site web WordPress</h3><p>Un site professionnel, rapide et rassurant, pensé pour transformer vos visiteurs en clients.</p><ul><li><svg class="i"><use href="#i-check"/></svg>Retouches illimitées</li><li><svg class="i"><use href="#i-check"/></svg>Personnalisation complète</li></ul><a class="btn btn-sm" href="https://wa.me/447878640409" data-wa target="_blank" rel="noopener"><span>Je veux ce service</span><svg class="i"><use href="#i-arrow"/></svg></a></div></article><article class="svc2 rv" style="--d:180ms"><div class="svc2-img"><img decoding="async" src="images/s/s6.webp" alt="Service Lorick Innovation : Web scraping" width="840" height="480" loading="lazy"></div><div class="svc2-b"><span class="svx-tag">Data</span><h3>Web scraping</h3><p>Les données dont vous avez besoin, récupérées pour vous sur le web : prospects, prix, annonces, catalogues. Propres, triées et prêtes à exploiter.</p><ul><li><svg class="i"><use href="#i-check"/></svg>Données précieuses récupérées</li><li><svg class="i"><use href="#i-check"/></svg>Format au choix : .csv, .xlsx, .json…</li></ul><a class="btn btn-sm" href="https://wa.me/447878640409" data-wa target="_blank" rel="noopener"><span>Je veux ce service</span><svg class="i"><use href="#i-arrow"/></svg></a></div></article></div>
