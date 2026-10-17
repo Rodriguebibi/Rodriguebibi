@@ -537,6 +537,15 @@
 .azp .btn .shine::before{animation-duration:8s}
 
 }
+.azp .book{position:relative;overflow:hidden;isolation:isolate;border-radius:36px;background:#0B0C10;border:1px solid var(--line);padding:clamp(28px,5vw,72px)}
+.azp .book::before{content:"";position:absolute;z-index:-1;left:30%;top:-300px;width:1000px;height:640px;margin-left:-500px;background:radial-gradient(closest-side,rgba(var(--accent-rgb),.5),rgba(var(--accent-rgb),.16) 45%,transparent 72%)}
+.azp .foot{padding-top:0}
+.azp .fcols{margin-top:0;border-top:0;padding-top:64px}
+.azp .agenda{height:auto!important;min-height:640px;background:#fff}
+.azp #my-cal-inline-collaboration-meta-ads{height:auto!important;min-height:640px;overflow:visible!important;position:relative;z-index:2}
+.azp .agenda-fb{z-index:0!important;background:transparent!important}
+@media (max-width:760px){.azp .agenda,.azp #my-cal-inline-collaboration-meta-ads{min-height:560px}
+.azp .book{border-radius:30px;padding:24px 16px}}
 
 
 </style>
@@ -931,6 +940,27 @@
   </div>
 </section>
 
+<section class="sec book-sec" id="rdv" aria-labelledby="azp-h-rdv" style="padding-top:20px">
+  <div class="wrap">
+  <div class="book">
+    <div class="rdv">
+      <div>
+        <span class="label">On en parle ?</span>
+        <h2 class="h2 split" id="azp-h-rdv">Et si on regardait ce qu’on peut <span class="hl">construire ensemble ?</span></h2>
+        <p class="sub">Si votre offre fonctionne déjà et que vous cherchez quelqu’un pour prendre sérieusement en charge vos publicités Facebook et Instagram, <strong>prenons 30 minutes.</strong> On parle de votre entreprise, de vos objectifs et de ce qui vous empêche d’aller plus loin. Ensuite, on voit si ça vaut le coup de travailler ensemble.</p>
+        <div class="trust" style="margin-top:28px"><span><svg class="i"><use href="#i-clock"/></svg>30 minutes</span><span><svg class="i"><use href="#i-user"/></svg>Avec Aziz, directement</span></div>
+      </div>
+      <div class="agenda" id="azp-agenda">
+        <!-- Cal inline embed code begins -->
+        <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-collaboration-meta-ads"></div>
+        <!-- Cal inline embed code ends -->
+        <div class="agenda-fb" id="azp-cal-fb" aria-hidden="true"><div><span class="spin"></span><b>Chargement du calendrier…</b><small>Choisissez votre créneau de 30 minutes avec Aziz.</small></div></div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
 <section class="sec glow-sec b" id="faq" aria-labelledby="azp-h-faq">
   <div class="wrap faqw">
     <div class="faq-side">
@@ -958,22 +988,8 @@
 </main>
 
 <div class="final">
-<footer class="foot" id="rdv" aria-labelledby="azp-h-rdv">
+<footer class="foot">
   <div class="wrap">
-    <div class="rdv">
-      <div>
-        <span class="label">On en parle ?</span>
-        <h2 class="h2 split" id="azp-h-rdv">Et si on regardait ce qu’on peut <span class="hl">construire ensemble ?</span></h2>
-        <p class="sub">Si votre offre fonctionne déjà et que vous cherchez quelqu’un pour prendre sérieusement en charge vos publicités Facebook et Instagram, <strong>prenons 30 minutes.</strong> On parle de votre entreprise, de vos objectifs et de ce qui vous empêche d’aller plus loin. Ensuite, on voit si ça vaut le coup de travailler ensemble.</p>
-        <div class="trust" style="margin-top:28px"><span><svg class="i"><use href="#i-clock"/></svg>30 minutes</span><span><svg class="i"><use href="#i-user"/></svg>Avec Aziz, directement</span></div>
-      </div>
-      <div class="agenda" id="azp-agenda">
-        <!-- Cal inline embed code begins -->
-        <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-collaboration-meta-ads"></div>
-        <!-- Cal inline embed code ends -->
-        <div class="agenda-fb" id="azp-cal-fb" aria-hidden="true"><div><span class="spin"></span><b>Chargement du calendrier…</b><small>Choisissez votre créneau de 30 minutes avec Aziz.</small></div></div>
-      </div>
-    </div>
     <div class="fcols">
       <div><a class="brand" href="#azp-top"><span class="mono">AD</span>Aziz Diallo</a><p>Votre acquisition devient aussi mon affaire.</p></div>
       <div><h4>La page</h4><ul><li><a href="#approche">Approche</a></li><li><a href="#resultats">Résultats</a></li><li><a href="#methode">Méthode</a></li><li><a href="#faq">FAQ</a></li></ul></div>
@@ -1104,9 +1120,10 @@ Cal.config.forwardQueryParams = true;
   });
 
   Cal.ns["collaboration-meta-ads"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+  Cal.ns["collaboration-meta-ads"]("on", {action:"linkReady",callback:function(){var fb=document.getElementById('azp-cal-fb');if(fb)fb.classList.add('hide');}});
   /* cache l'écran de chargement dès que le calendrier est affiché */
   (function(){var fb=document.getElementById('azp-cal-fb'),box=document.getElementById('my-cal-inline-collaboration-meta-ads'),n=0;
-    var t=setInterval(function(){n++;var f=box&&box.querySelector('iframe');if(f&&f.offsetHeight>100){fb.classList.add('hide');clearInterval(t);}},500);})();
+    var t=setInterval(function(){n++;var f=box&&box.querySelector('iframe');if(f&&f.getBoundingClientRect().height>200&&getComputedStyle(f).visibility!=='hidden'){fb.classList.add('hide');clearInterval(t);}},500);})();
 </script>
 
 </body>
