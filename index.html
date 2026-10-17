@@ -1807,5 +1807,68 @@ html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}body{margin:
 </script>
 
 </div>
+
+<!-- Protection anti-copie Lorick Innovation -->
+<style>
+html,body{-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-touch-callout:none}
+input,textarea,select,[contenteditable="true"]{-webkit-user-select:text;-moz-user-select:text;user-select:text}
+img,svg,video,canvas{-webkit-user-drag:none;user-drag:none}
+#li-guard-toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);z-index:2147483646;
+  max-width:min(92vw,420px);display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:14px;
+  background:rgba(14,14,16,.92);color:#fff;border:1px solid rgba(255,225,0,.55);box-shadow:0 12px 40px rgba(0,0,0,.45);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);font:600 14px/1.4 'Urbanist',-apple-system,BlinkMacSystemFont,sans-serif;
+  opacity:0;pointer-events:none;transition:opacity .25s,transform .25s}
+#li-guard-toast.on{opacity:1;transform:translate(-50%,0)}
+#li-guard-toast b{display:grid;place-items:center;flex:none;width:30px;height:30px;border-radius:50%;background:#ffe100;color:#0e0e10;font-size:16px}
+#li-guard-veil{position:fixed;inset:0;z-index:2147483647;display:none;place-items:center;text-align:center;
+  padding:24px max(16px,env(safe-area-inset-left,0px));background:rgba(8,8,10,.86);
+  -webkit-backdrop-filter:blur(26px);backdrop-filter:blur(26px);color:#fff;font:600 16px/1.5 'Urbanist',-apple-system,BlinkMacSystemFont,sans-serif}
+#li-guard-veil.on{display:grid}
+#li-guard-veil strong{display:block;font-size:22px;color:#ffe100;margin-bottom:6px}
+html.li-locked body>*:not(#li-guard-veil):not(#li-guard-toast){filter:blur(18px)}
+@media (prefers-reduced-motion:reduce){#li-guard-toast{transition:none}}
+</style>
+<div id="li-guard-toast" role="alert" aria-live="assertive"><b>!</b><span></span></div>
+<div id="li-guard-veil" role="alert"><div><strong>Accès refusé</strong>L'inspection du code de cette page est interdite.<br>Fermez les outils de développement pour continuer.<br><small style="opacity:.7">© Lorick Innovation — tous droits réservés</small></div></div>
+<script>
+(function(){
+  var toast=document.getElementById('li-guard-toast'),msg=toast.querySelector('span'),veil=document.getElementById('li-guard-veil'),tm;
+  function warn(t){msg.textContent=t;toast.classList.add('on');clearTimeout(tm);tm=setTimeout(function(){toast.classList.remove('on');},2600);}
+  function editable(el){return el&&(el.closest&&el.closest('input,textarea,select,[contenteditable="true"]'));}
+
+  /* clic droit */
+  document.addEventListener('contextmenu',function(e){if(editable(e.target))return;e.preventDefault();warn('Attention : le clic droit est interdit sur cette page.');},true);
+
+  /* raccourcis d'inspection, source, sauvegarde, copie */
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase(),c=e.ctrlKey||e.metaKey,s=e.shiftKey,a=e.altKey,bad=false,t='Action non autorisée sur cette page.';
+    if(k==='f12'){bad=true;t='L\'inspection du code est interdite.';}
+    else if(c&&(s||a)&&['i','j','c','k','m','e'].indexOf(k)>-1){bad=true;t='L\'inspection du code est interdite.';}
+    else if(c&&k==='u'){bad=true;t='L\'affichage du code source est interdit.';}
+    else if(c&&k==='s'){bad=true;t='L\'enregistrement de la page est interdit.';}
+    else if(c&&k==='p'){bad=true;t='L\'impression de la page est interdite.';}
+    else if(c&&['c','x','a'].indexOf(k)>-1&&!editable(e.target)){bad=true;t='La copie du contenu est interdite.';}
+    if(bad){e.preventDefault();e.stopPropagation();warn(t);return false;}
+  },true);
+
+  /* copie, coupe, glisser, sélection */
+  ['copy','cut'].forEach(function(ev){document.addEventListener(ev,function(e){if(editable(e.target))return;e.preventDefault();warn('La copie du contenu est interdite.');},true);});
+  document.addEventListener('dragstart',function(e){if(!editable(e.target))e.preventDefault();},true);
+  document.addEventListener('selectstart',function(e){if(!editable(e.target))e.preventDefault();},true);
+
+  /* message dans la console */
+  try{var st='color:#ffe100;font:700 22px sans-serif';console.log('%cStop !',st);console.log('%cCe code appartient à Lorick Innovation. Toute copie ou reproduction est interdite.','font:15px sans-serif');}catch(_){}
+
+  /* détection des outils de développement : piège "debugger" + voile flouté */
+  var locked=false;
+  function lock(on){if(on===locked)return;locked=on;veil.classList.toggle('on',on);document.documentElement.classList.toggle('li-locked',on);}
+  setInterval(function(){
+    var t0=performance.now();
+    debugger;
+    var open=performance.now()-t0>120;
+    lock(open);
+  },1000);
+})();
+</script>
 </body>
 </html>
