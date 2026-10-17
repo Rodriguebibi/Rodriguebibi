@@ -1841,8 +1841,11 @@ html.li-locked body>*:not(#li-guard-veil):not(#li-guard-toast){filter:blur(18px)
 
   /* raccourcis d'inspection, source, sauvegarde, copie */
   document.addEventListener('keydown',function(e){
-    var k=(e.key||'').toLowerCase(),c=e.ctrlKey||e.metaKey,s=e.shiftKey,a=e.altKey,bad=false,t='Action non autorisée sur cette page.';
-    if(k==='f12'){bad=true;t='L\'inspection du code est interdite.';}
+    /* e.code = touche physique : fiable sur Mac même quand Option change la lettre */
+    var code=e.code||'',k=code.indexOf('Key')===0?code.slice(3).toLowerCase():(e.key||'').toLowerCase(),
+        c=e.ctrlKey||e.metaKey,s=e.shiftKey,a=e.altKey,bad=false,t='Action non autorisée sur cette page.';
+    if(k==='f12'||code==='F12'){bad=true;t='L\'inspection du code est interdite.';}
+    else if(c&&a&&k==='u'){bad=true;t='L\'affichage du code source est interdit.';}
     else if(c&&(s||a)&&['i','j','c','k','m','e'].indexOf(k)>-1){bad=true;t='L\'inspection du code est interdite.';}
     else if(c&&k==='u'){bad=true;t='L\'affichage du code source est interdit.';}
     else if(c&&k==='s'){bad=true;t='L\'enregistrement de la page est interdit.';}
