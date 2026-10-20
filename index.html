@@ -1210,46 +1210,52 @@ html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}body{margin:
 
 
 
-.lrk .rs-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:40px;align-items:center;padding:48px;overflow:hidden;position:relative}
-.lrk .rs-hero::after{content:"";position:absolute;right:-140px;top:-160px;width:520px;height:520px;border-radius:50%;background:radial-gradient(closest-side,rgba(var(--accent-rgb),.22),transparent 70%);pointer-events:none}
-.lrk .rs-big b{display:block;margin-top:14px;font-size:clamp(60px,7.4vw,108px);font-weight:500;letter-spacing:-.06em;line-height:.9;background:linear-gradient(180deg,var(--text) 30%,var(--mint));-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
-.lrk .rs-l>p{margin-top:16px;font-size:17px;max-width:420px}
-.lrk .rs-eng{flex-wrap:wrap;gap:22px 30px;margin-top:30px;padding-top:26px;border-top:1px solid var(--line)}
-.lrk .rs-eng div{max-width:150px}
-.lrk .rs-eng b{font-size:30px}
-.lrk .rs-fan{position:relative;height:360px}
-.lrk .rs-fan img{position:absolute;width:78%;border-radius:18px;box-shadow:0 30px 60px -24px rgba(10,30,90,.45),0 0 0 1px rgba(255,255,255,.6);transition:transform .6s var(--spring)}
-.lrk .rs-fan .f1{left:4%;top:22%;transform:rotate(-4deg);z-index:3}
-.lrk .rs-fan .f2{left:18%;top:8%;transform:rotate(3deg);z-index:2}
-.lrk .rs-fan .f3{left:24%;top:42%;transform:rotate(7deg);z-index:1;opacity:.9}
-.lrk .rs-hero:hover .f1{transform:rotate(-6deg) translate(-10px,6px)}
-.lrk .rs-hero:hover .f2{transform:rotate(5deg) translate(8px,-8px)}
-.lrk .rs-hero:hover .f3{transform:rotate(10deg) translate(14px,10px)}
-.lrk .rs-badge{position:absolute;left:0;bottom:6px;z-index:4;display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:200px;background:var(--surface-solid);border:1px solid var(--line);box-shadow:0 14px 30px -12px rgba(10,30,90,.35);font-size:13.5px;font-weight:500;color:var(--text)}
-.lrk .rs-badge svg{width:16px;height:16px;color:var(--mint)}
-.lrk .rs-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
-.lrk .rs-c{display:flex;flex-direction:column;padding:10px;overflow:hidden}
-.lrk .rs-shot{position:relative;display:block;width:100%;padding:0;border:0;border-radius:20px;overflow:hidden;cursor:zoom-in;background:none}
-.lrk .rs-shot img{display:block;width:100%;height:auto;transition:transform .6s var(--spring)}
-.lrk .rs-c:hover .rs-shot img{transform:scale(1.04)}
-.lrk .rs-zoom{position:absolute;right:12px;top:12px;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.92);color:#0F62FF;box-shadow:0 8px 20px -8px rgba(0,0,0,.4);opacity:0;transform:scale(.8);transition:all .35s var(--spring)}
-.lrk .rs-zoom svg{width:18px;height:18px}
-.lrk .rs-c:hover .rs-zoom{opacity:1;transform:none}
-.lrk .rs-b{display:flex;flex-direction:column;padding:22px 18px 18px}
-.lrk .rs-amt{margin-top:10px;font-size:clamp(38px,3.6vw,50px);font-weight:500;letter-spacing:-.05em;line-height:1;background:linear-gradient(180deg,var(--text) 30%,var(--mint));-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
-.lrk .rs-sub{margin-top:6px;font-size:14px;color:var(--muted)}
-.lrk .rs-kpi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:20px}
-.lrk .rs-kpi div{display:flex;flex-direction:column;gap:3px;padding:13px 12px;border-radius:16px;background:var(--surface-2);border:1px solid var(--line)}
-.lrk .rs-kpi b{font-size:17px;font-weight:600;letter-spacing:-.02em;color:var(--mint);white-space:nowrap}
-.lrk .rs-kpi span{font-size:12.5px;line-height:1.3;color:var(--muted)}
-.lrk .rs-b p{margin-top:16px;font-size:15px;line-height:1.55}
-.lrk .rs-end{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:40px;align-items:center;margin-top:16px;padding:44px 48px}
-.lrk .rs-end h3{margin-top:12px;font-size:clamp(24px,2.4vw,32px);line-height:1.15}
-.lrk .rs-end p{margin-top:12px;font-size:16px}
-.lrk .rs-cta{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
-.lrk .rs-cta small{font-size:12.5px;color:var(--muted);line-height:1.45}
-@media(max-width:1080px){.lrk .rs-hero{grid-template-columns:1fr;padding:36px}.lrk .rs-fan{height:320px;max-width:560px;width:100%;margin:0 auto}.lrk .rs-grid{grid-template-columns:1fr;max-width:620px;margin-left:auto;margin-right:auto}.lrk .rs-end{grid-template-columns:1fr;gap:24px;padding:36px}}
-@media(max-width:560px){.lrk .rs-hero{padding:28px 20px;gap:24px}.lrk .rs-fan{height:230px}.lrk .rs-eng b{font-size:24px}.lrk .rs-eng{gap:16px 22px}.lrk .rs-end{padding:28px 20px}.lrk .rs-cta .btn{width:100%;justify-content:center}.lrk .rs-zoom{opacity:1;transform:none}}
+.lrk .rx{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,4vw,64px);align-items:center;padding:clamp(40px,5vw,72px);border-radius:40px;background:#0A0B12;color:#F2F4FA;border:1px solid rgba(255,255,255,.07)}
+.lrk .rx-glow{position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(600px 420px at 78% 40%,rgba(var(--accent-rgb),.45),transparent 70%),radial-gradient(500px 300px at 0% 100%,rgba(255,225,0,.10),transparent 70%)}
+.lrk .rx-glow::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(closest-side at 70% 45%,#000,transparent)}
+.lrk .rx .label{color:#9AA0B4}
+.lrk .rx-h{margin-top:18px;font-size:clamp(22px,2.2vw,28px);font-weight:400;letter-spacing:-.02em;line-height:1.25;color:#C9CDDA;max-width:420px}
+.lrk .rx-big{display:flex;align-items:flex-start;gap:10px;margin-top:10px;line-height:.9}
+.lrk .rx-big b{font-size:clamp(64px,8vw,118px);font-weight:500;letter-spacing:-.06em;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(180deg,#fff 35%,#FFE100 140%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lrk .rx-big span{font-size:clamp(30px,3.4vw,48px);font-weight:500;color:#FFE100;margin-top:.12em}
+.lrk .rx-p{margin-top:18px;font-size:16px;color:#9AA0B4;max-width:420px;line-height:1.55}
+.lrk .rx-tabs{display:flex;flex-direction:column;gap:10px;margin-top:28px}
+.lrk .rx-t{position:relative;display:grid;grid-template-columns:auto 1fr;gap:4px 16px;align-items:center;width:100%;padding:14px 18px;border-radius:20px;text-align:left;color:inherit;font:inherit;cursor:pointer;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);transition:all .4s var(--ease)}
+.lrk .rx-t:hover{background:rgba(255,255,255,.06)}
+.lrk .rx-t.on{background:linear-gradient(135deg,rgba(var(--accent-rgb),.28),rgba(var(--accent-rgb),.08));border-color:rgba(var(--accent-rgb),.6);box-shadow:0 18px 40px -20px rgba(var(--accent-rgb),.9)}
+.lrk .rx-n{grid-row:span 2;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-size:13px;font-weight:600;color:#9AA0B4;background:rgba(255,255,255,.06);transition:all .4s var(--ease)}
+.lrk .rx-t.on .rx-n{background:#FFE100;color:#0A0B12}
+.lrk .rx-tx{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.lrk .rx-tx small{font-size:13px;color:#9AA0B4;letter-spacing:.02em}
+.lrk .rx-tx b{font-size:20px;font-weight:500;letter-spacing:-.03em;color:#fff;white-space:nowrap}
+.lrk .rx-bar{height:4px;border-radius:4px;background:rgba(255,255,255,.08);overflow:hidden}
+.lrk .rx-bar i{display:block;height:100%;min-width:6%;border-radius:4px;background:linear-gradient(90deg,var(--accent-light),#FFE100);transform-origin:left;transform:scaleX(0);transition:transform 1.2s var(--ease)}
+.lrk .rx.vis .rx-bar i,.lrk .rx:not(.pre) .rx-bar i{transform:scaleX(1)}
+.lrk .rx-cta{margin-top:28px}
+.lrk .rx-r{perspective:1400px}
+.lrk .rx-stage{position:relative;aspect-ratio:1260/720;transform-style:preserve-3d;transform:rotateY(-9deg) rotateX(5deg);transition:transform .8s var(--ease)}
+.lrk .rx-r:hover .rx-stage{transform:rotateY(-3deg) rotateX(2deg)}
+.lrk .rx-sl{position:absolute;inset:0;opacity:0;transform:translateZ(-60px) scale(.94);transition:opacity .6s var(--ease),transform .8s var(--ease);pointer-events:none}
+.lrk .rx-sl.on{opacity:1;transform:none;pointer-events:auto}
+.lrk .rx-img{display:block;width:100%;height:100%;padding:0;border:0;background:none;cursor:zoom-in;border-radius:24px;overflow:hidden;box-shadow:0 50px 100px -30px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.12),0 0 80px -20px rgba(var(--accent-rgb),.8)}
+.lrk .rx-img img{display:block;width:100%;height:100%;object-fit:cover}
+.lrk .rx-chip{position:absolute;display:flex;flex-direction:column;gap:2px;padding:12px 16px;border-radius:18px;font-size:12.5px;color:#C9CDDA;background:rgba(14,16,26,.72);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 20px 40px -16px rgba(0,0,0,.8);transform:translateZ(60px);opacity:0;transition:opacity .5s var(--ease),transform .7s var(--spring)}
+.lrk .rx-chip b{font-size:20px;font-weight:600;letter-spacing:-.02em;color:#fff;white-space:nowrap}
+.lrk .rx-sl.on .rx-chip{opacity:1}
+.lrk .rx-chip.c0{left:-34px;top:12%;transition-delay:.15s}
+.lrk .rx-chip.c1{right:-26px;top:-22px;transition-delay:.25s}
+.lrk .rx-chip.c1 b{color:#FFE100}
+.lrk .rx-chip.c2{right:10%;bottom:-26px;transition-delay:.35s}
+.lrk .rx-sl.on .rx-chip{animation:rxF 6s ease-in-out infinite}
+.lrk .rx-sl.on .rx-chip.c1{animation-delay:-2s}.lrk .rx-sl.on .rx-chip.c2{animation-delay:-4s}
+@keyframes rxF{0%,100%{translate:0 0}50%{translate:0 -8px}}
+.lrk .rx-live{position:absolute;left:18px;bottom:-46px;display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:#9AA0B4}
+.lrk .rx-live i{width:8px;height:8px;border-radius:50%;background:#2BD67B;box-shadow:0 0 0 0 rgba(43,214,123,.6);animation:rxP 2s infinite}
+@keyframes rxP{70%{box-shadow:0 0 0 8px rgba(43,214,123,0)}100%{box-shadow:0 0 0 0 rgba(43,214,123,0)}}
+.lrk .rx-note{grid-column:1/-1;font-size:12px;color:#6F7489;text-align:center;margin-top:10px}
+@media(max-width:1080px){.lrk .rx{grid-template-columns:1fr}.lrk .rx-r{order:-1;margin:24px 20px 40px}.lrk .rx-stage{transform:rotateX(4deg)}}
+@media(max-width:560px){.lrk .rx{padding:30px 18px;border-radius:30px}.lrk .rx-r{margin:20px 8px 44px}.lrk .rx-chip{padding:8px 11px;border-radius:14px;font-size:11px}.lrk .rx-chip b{font-size:15px}.lrk .rx-chip.c0{left:-12px}.lrk .rx-chip.c1{right:-10px;top:-18px}.lrk .rx-chip.c2{bottom:-22px}.lrk .rx-tx b{font-size:17px}.lrk .rx-cta .btn{width:100%;justify-content:center}.lrk .rx-live{bottom:-40px;left:6px}}
+@media(prefers-reduced-motion:reduce){.lrk .rx-sl.on .rx-chip{animation:none}}
 </style>
 </head>
 <body>
@@ -1501,33 +1507,21 @@ html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}body{margin:
   </div>
 </section>
 
-<section class="sec light" id="resultats" aria-labelledby="h-sio"><span class="wm" aria-hidden="true">RÉSULTATS</span>
+<section class="sec" id="resultats" aria-labelledby="h-sio">
   <div class="wrap">
-    <div class="head"><span class="label rv">Résultats clients · Systeme.io</span><h2 class="h2 rv split" id="h-sio">Des tunnels qui encaissent. <span class="hl">Chiffres à l'appui.</span></h2><p class="lead rv">Pas des maquettes, pas des promesses : des ventes réelles, encaissées par mes clients et visibles dans leurs tableaux de bord Systeme.io.</p></div>
-    <div class="card rs-hero rv">
-      <div class="rs-l">
-        <span class="kick">Généré pour mes clients</span>
-        <div class="rs-big"><b>637 723 €</b></div>
-        <p>de chiffre d'affaires encaissé grâce à trois tunnels que j'ai conçus, de la page de vente jusqu'au paiement.</p>
-        <div class="eng rs-eng"><div><b>+ 5 400</b><span>ventes réalisées</span></div><div><b>54 %</b><span>de conversion au bon de commande</span></div><div><b>950 €</b><span>de panier moyen sur l'offre premium</span></div></div>
+    <div class="rx rv">
+      <div class="rx-glow" aria-hidden="true"></div>
+      <div class="rx-l">
+        <span class="label">Résultats clients · Systeme.io</span>
+        <h2 class="rx-h" id="h-sio">Mes tunnels ont fait encaisser à mes clients</h2>
+        <div class="rx-big"><b id="rxCount" data-v="637723">637 723</b><span>€</span></div>
+        <p class="rx-p">Des ventes réelles, visibles dans leurs tableaux de bord. Choisissez un tunnel pour voir ses chiffres.</p>
+        <div class="rx-tabs" role="tablist"><button type="button" class="rx-t on" data-i="0" role="tab" aria-selected="true"><span class="rx-n">01</span><span class="rx-tx"><small>Vente directe</small><b>543 839 €</b></span><span class="rx-bar"><i style="width:85.3%"></i></span></button><button type="button" class="rx-t" data-i="1" role="tab" aria-selected="false"><span class="rx-n">02</span><span class="rx-tx"><small>Offre premium</small><b>50 043 €</b></span><span class="rx-bar"><i style="width:7.8%"></i></span></button><button type="button" class="rx-t" data-i="2" role="tab" aria-selected="false"><span class="rx-n">03</span><span class="rx-tx"><small>Paiement optimisé</small><b>43 839 €</b></span><span class="rx-bar"><i style="width:6.9%"></i></span></button></div>
+        <div class="rx-cta"><a class="btn" href="https://wa.me/447878640409" data-wa target="_blank" rel="noopener"><i class="shine" aria-hidden="true"></i><span>Je veux un tunnel qui vend</span><svg class="i"><use href="#i-arrow"/></svg></a></div>
       </div>
-      <div class="rs-fan" aria-hidden="true"><img src="images/sio/sio-43k.webp" alt="" loading="lazy" decoding="async" class="f3"><img src="images/sio/sio-50k.webp" alt="" loading="lazy" decoding="async" class="f2"><img src="images/sio/sio-543k.webp" alt="" loading="lazy" decoding="async" class="f1"><span class="rs-badge"><svg class="i"><use href="#h-trend"/></svg>Statistiques réelles Systeme.io</span></div>
+      <div class="rx-r"><div class="rx-stage" id="rxStage"><div class="rx-sl on" data-i="0"><button type="button" class="sio-s rx-img" aria-label="Agrandir : Statistiques Systeme.io du tunnel d'un client : 543 839,82 € au total, 5 064 ventes, panier moyen 107,41 €"><img src="images/sio/sio-543k.webp" alt="Statistiques Systeme.io du tunnel d'un client : 543 839,82 € au total, 5 064 ventes, panier moyen 107,41 €" width="1260" height="720" loading="lazy" decoding="async"></button><span class="rx-chip c0"><b>5 064</b>ventes</span><span class="rx-chip c1"><b>107,41 €</b>panier moyen</span><span class="rx-chip c2"><b>414 321</b>visites</span></div><div class="rx-sl" data-i="1"><button type="button" class="sio-s rx-img" aria-label="Agrandir : Statistiques Systeme.io du tunnel d'un client : 50 043,88 € au total, panier moyen 950,16 €, 54 % de conversion sur le bon de commande"><img src="images/sio/sio-50k.webp" alt="Statistiques Systeme.io du tunnel d'un client : 50 043,88 € au total, panier moyen 950,16 €, 54 % de conversion sur le bon de commande" width="1260" height="720" loading="lazy" decoding="async"></button><span class="rx-chip c0"><b>950,16 €</b>panier moyen</span><span class="rx-chip c1"><b>54 %</b>au bon de commande</span><span class="rx-chip c2"><b>15 390</b>visites</span></div><div class="rx-sl" data-i="2"><button type="button" class="sio-s rx-img" aria-label="Agrandir : Statistiques Systeme.io du tunnel d'un client : 43 839,82 € au total, panier moyen 125,61 €, 9,87 % de conversion sur la page de paiement"><img src="images/sio/sio-43k.webp" alt="Statistiques Systeme.io du tunnel d'un client : 43 839,82 € au total, panier moyen 125,61 €, 9,87 % de conversion sur la page de paiement" width="1260" height="720" loading="lazy" decoding="async"></button><span class="rx-chip c0"><b>125,61 €</b>panier moyen</span><span class="rx-chip c1"><b>9,87 %</b>de conversion</span><span class="rx-chip c2"><b>8 407</b>visites</span></div><div class="rx-live"><i></i>Statistiques réelles · Systeme.io</div></div></div>
+      <small class="rx-note">Résultats réels de clients. Chaque projet est différent : ils dépendent de l'offre, du trafic et du marché.</small>
     </div>
-    <div class="rs-grid">
-      <article class="card rs-c rv">
-        <button type="button" class="sio-s rs-shot" aria-label="Agrandir : Statistiques Systeme.io du tunnel d'un client : 543 839,82 € au total, 5 064 ventes, panier moyen 107,41 €"><img src="images/sio/sio-543k.webp" alt="Statistiques Systeme.io du tunnel d'un client : 543 839,82 € au total, 5 064 ventes, panier moyen 107,41 €" width="1260" height="720" loading="lazy" decoding="async"><span class="rs-zoom"><svg class="i"><use href="#i-zoom"/></svg></span></button>
-        <div class="rs-b"><span class="kick">Tunnel n° 1 · Vente directe</span><b class="rs-amt">543 839 €</b><span class="rs-sub">générés par ce tunnel</span><div class="rs-kpi"><div><b>5 064</b><span>ventes</span></div><div><b>107,41 €</b><span>panier moyen</span></div><div><b>414 321</b><span>visites</span></div></div><p>Un tunnel pensé pour le volume : une page de vente qui transforme un trafic massif en milliers de commandes.</p></div>
-      </article>
-      <article class="card rs-c rv" style="--d:90ms">
-        <button type="button" class="sio-s rs-shot" aria-label="Agrandir : Statistiques Systeme.io du tunnel d'un client : 50 043,88 € au total, panier moyen 950,16 €, 54 % de conversion sur le bon de commande"><img src="images/sio/sio-50k.webp" alt="Statistiques Systeme.io du tunnel d'un client : 50 043,88 € au total, panier moyen 950,16 €, 54 % de conversion sur le bon de commande" width="1260" height="720" loading="lazy" decoding="async"><span class="rs-zoom"><svg class="i"><use href="#i-zoom"/></svg></span></button>
-        <div class="rs-b"><span class="kick">Tunnel n° 2 · Offre premium</span><b class="rs-amt">50 043 €</b><span class="rs-sub">générés par ce tunnel</span><div class="rs-kpi"><div><b>950,16 €</b><span>panier moyen</span></div><div><b>54 %</b><span>au bon de commande</span></div><div><b>15 390</b><span>visites</span></div></div><p>Une offre haut de gamme vendue après un challenge : plus d'un visiteur sur deux du bon de commande passe à l'achat.</p></div>
-      </article>
-      <article class="card rs-c rv" style="--d:180ms">
-        <button type="button" class="sio-s rs-shot" aria-label="Agrandir : Statistiques Systeme.io du tunnel d'un client : 43 839,82 € au total, panier moyen 125,61 €, 9,87 % de conversion sur la page de paiement"><img src="images/sio/sio-43k.webp" alt="Statistiques Systeme.io du tunnel d'un client : 43 839,82 € au total, panier moyen 125,61 €, 9,87 % de conversion sur la page de paiement" width="1260" height="720" loading="lazy" decoding="async"><span class="rs-zoom"><svg class="i"><use href="#i-zoom"/></svg></span></button>
-        <div class="rs-b"><span class="kick">Tunnel n° 3 · Paiement optimisé</span><b class="rs-amt">43 839 €</b><span class="rs-sub">générés par ce tunnel</span><div class="rs-kpi"><div><b>125,61 €</b><span>panier moyen</span></div><div><b>9,87 %</b><span>de conversion</span></div><div><b>8 407</b><span>visites</span></div></div><p>Une page de paiement claire et rassurante, qui convertit près d'un visiteur sur dix.</p></div>
-      </article>
-    </div>
-    <div class="card rs-end rv"><div><span class="kick">Votre projet</span><h3>Et vous, combien votre offre pourrait-elle rapporter <span class="hl">avec le bon tunnel ?</span></h3><p>Même méthode à chaque projet : une promesse claire, une page de vente qui lève les objections et un paiement sans friction. Parlons de votre offre, je vous dis honnêtement ce qu'un tunnel peut changer pour vous.</p></div><div class="rs-cta"><a class="btn" href="https://wa.me/447878640409" data-wa target="_blank" rel="noopener"><i class="shine" aria-hidden="true"></i><span>Je veux un tunnel qui vend</span><svg class="i"><use href="#i-arrow"/></svg></a><small>Résultats réels de clients. Chaque projet est différent : ils dépendent de l'offre, du trafic et du marché.</small></div></div>
   </div>
 </section>
 
@@ -1947,6 +1941,16 @@ html.li-locked body>*:not(#li-guard-veil):not(#li-guard-toast){filter:blur(18px)
 <script>
 (function(){var lb=document.getElementById('lb'),lbi=document.getElementById('lbi'),lbc=document.getElementById('lbc');if(!lb)return;
 document.querySelectorAll('.sio-s').forEach(function(b){b.addEventListener('click',function(){var im=b.querySelector('img');lbi.style.maxWidth='1100px';lbi.src=im.currentSrc||im.src;lbi.alt=im.alt;lbc.textContent='Statistiques Systeme.io';lb.scrollTop=0;lb.classList.add('open');document.body.style.overflow='hidden';});});})();
+</script>
+<script>
+(function(){var st=document.getElementById('rxStage');if(!st)return;var tabs=[].slice.call(document.querySelectorAll('.rx-t')),sl=[].slice.call(st.querySelectorAll('.rx-sl')),cur=0,auto=true,tm;
+function go(i){cur=i;tabs.forEach(function(t,j){t.classList.toggle('on',j===i);t.setAttribute('aria-selected',j===i?'true':'false')});sl.forEach(function(s,j){s.classList.toggle('on',j===i)});}
+tabs.forEach(function(t,i){t.addEventListener('click',function(){auto=false;clearInterval(tm);go(i)})});
+var rx=document.querySelector('.rx'),c=document.getElementById('rxCount'),done=false;
+function count(){if(done)return;done=true;var v=+c.getAttribute('data-v'),t0=null;if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;function f(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/1800),e=1-Math.pow(1-p,4);c.textContent=Math.round(v*e).toLocaleString('fr-FR').replace(/\u202f|\u00a0/g,'\u00a0');if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){rx.classList.add('vis');count();if(auto&&!tm)tm=setInterval(function(){if(auto)go((cur+1)%sl.length)},4500);}})},{threshold:.35});io.observe(rx);
+var r=st.parentNode;if(matchMedia('(hover:hover)').matches){r.addEventListener('mousemove',function(e){var b=r.getBoundingClientRect(),x=(e.clientX-b.left)/b.width-.5,y=(e.clientY-b.top)/b.height-.5;st.style.transform='rotateY('+(x*10)+'deg) rotateX('+(-y*8)+'deg)'});r.addEventListener('mouseleave',function(){st.style.transform=''})}
+})();
 </script>
 </body>
 </html>
