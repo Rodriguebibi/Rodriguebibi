@@ -1209,6 +1209,16 @@ html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}body{margin:
 .lrk .sec.light .tile:not(.fl .tile) svg{color:#0A3BB8!important;stroke-width:2.1!important;filter:none!important}
 
 
+
+.sio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:1200px;margin:0 auto}
+.sio figure{margin:0}
+.sio-s{display:block;width:100%;padding:6px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.04);cursor:zoom-in;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s}
+.sio-s:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.2)}
+.sio-s img{display:block;width:100%;height:auto;border-radius:16px}
+.sio figcaption{display:flex;flex-direction:column;gap:4px;margin:14px 6px 0;font-size:14.5px;color:var(--muted)}
+.sio figcaption b{font-size:26px;font-weight:500;letter-spacing:-.03em;color:var(--text)}
+#resultats .cta-c{margin-top:44px}
+@media(max-width:960px){.sio{grid-template-columns:1fr;max-width:640px}}
 </style>
 </head>
 <body>
@@ -1457,6 +1467,18 @@ html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}body{margin:
       <div class="card rv" style="--d:210ms"><svg class="i3"><use href="#d-trophy"/></svg><span><b data-to="100" data-suf="%">100%</b><span>Satisfaction client</span></span></div>
     </div>
     <div class="cta-c rv"><a class="btn" href="https://wa.me/447878640409" data-wa target="_blank" rel="noopener"><i class="shine" aria-hidden="true"></i><span>Discuter de votre projet</span><svg class="i"><use href="#i-arrow"/></svg></a></div>
+  </div>
+</section>
+
+<section class="sec" id="resultats" aria-labelledby="h-sio"><span class="wm" aria-hidden="true">RÉSULTATS</span>
+  <div class="wrap">
+    <div class="head"><span class="label rv">Statistiques Systeme.io</span><h2 class="h2 rv split" id="h-sio">Les tunnels que j'ai créés pour mes clients leur ont rapporté <span class="hl">637 723 €.</span></h2><p class="lead rv">Captures réelles des tableaux de bord Systeme.io de mes clients. Un tunnel bien construit ne se contente pas d'être beau : il vend. Cliquez sur une capture pour l'agrandir.</p></div>
+    <div class="sio">
+      <figure class="rv"><button type="button" class="sio-s" aria-label="Agrandir : Statistiques Systeme.io du tunnel d'un client : 543 839,82 € au total, 5 064 ventes"><img src="images/sio/sio-543k.webp" alt="Statistiques Systeme.io du tunnel d'un client : 543 839,82 € au total, 5 064 ventes" width="1260" height="720" loading="lazy" decoding="async"></button><figcaption><b>543 839 €</b><span>5 064 ventes sur le tunnel d'un client</span></figcaption></figure>
+      <figure class="rv" style="--d:100ms"><button type="button" class="sio-s" aria-label="Agrandir : Statistiques Systeme.io du tunnel d'un client : 50 043,88 € au total, 54 % de conversion sur le bon de commande"><img src="images/sio/sio-50k.webp" alt="Statistiques Systeme.io du tunnel d'un client : 50 043,88 € au total, 54 % de conversion sur le bon de commande" width="1260" height="720" loading="lazy" decoding="async"></button><figcaption><b>50 043 €</b><span>54 % de conversion sur le bon de commande</span></figcaption></figure>
+      <figure class="rv" style="--d:200ms"><button type="button" class="sio-s" aria-label="Agrandir : Statistiques Systeme.io du tunnel d'un client : 43 839,82 € au total, 9,87 % de conversion sur la page de paiement"><img src="images/sio/sio-43k.webp" alt="Statistiques Systeme.io du tunnel d'un client : 43 839,82 € au total, 9,87 % de conversion sur la page de paiement" width="1260" height="720" loading="lazy" decoding="async"></button><figcaption><b>43 839 €</b><span>9,87 % de conversion sur la page de paiement</span></figcaption></figure>
+    </div>
+    <div class="cta-c rv"><a class="btn" href="https://wa.me/447878640409" data-wa target="_blank" rel="noopener"><i class="shine" aria-hidden="true"></i><span>Je veux un tunnel qui vend</span><svg class="i"><use href="#i-arrow"/></svg></a></div>
   </div>
 </section>
 
@@ -1872,6 +1894,10 @@ html.li-locked body>*:not(#li-guard-veil):not(#li-guard-toast){filter:blur(18px)
     lock(open);
   },1000);
 })();
+</script>
+<script>
+(function(){var lb=document.getElementById('lb'),lbi=document.getElementById('lbi'),lbc=document.getElementById('lbc');if(!lb)return;
+document.querySelectorAll('.sio-s').forEach(function(b){b.addEventListener('click',function(){var im=b.querySelector('img');lbi.style.maxWidth='1100px';lbi.src=im.currentSrc||im.src;lbi.alt=im.alt;lbc.textContent='Statistiques Systeme.io';lb.scrollTop=0;lb.classList.add('open');document.body.style.overflow='hidden';});});})();
 </script>
 </body>
 </html>
