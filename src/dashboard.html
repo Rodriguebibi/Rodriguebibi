@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#000000">
+<title>Console Lorick</title>
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/urbanist-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/console.css">
+<script type="importmap">{"imports":{"three":"/assets/three.module.min.js","three/addons/":"/assets/jsm/"}}</script>
+</head>
+<body>
+<div class="loading" id="loading"><span class="spinner"></span></div>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h4v12h10v4H4z"/></svg></span>
+      <span>Lorick<small>Console</small></span>
+    </div>
+    <div class="seg" id="seg" role="tablist" aria-label="Période">
+      <button data-d="1">Aujourd'hui</button><button data-d="7" class="on">7 jours</button><button data-d="30">30 jours</button><button data-d="90">90 jours</button>
+    </div>
+    <div class="live zero" id="live" title="Visiteurs actifs sur les 2 dernières minutes"><i></i><b id="liveN">0</b><span>&nbsp;en ligne</span></div>
+    <div class="menu">
+      <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+      </button>
+      <div class="menu-pop" id="menuPop">
+        <button id="mRefresh"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>Actualiser</button>
+        <button id="mDemo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg><span>Aperçu avec données fictives</span></button>
+        <button id="mOut"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>Se déconnecter</button>
+        <button id="mOutAll" class="danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.4 8.4-8 9-4.6-.6-8-4-8-9V6z"/><path d="M9.5 9.5l5 5M14.5 9.5l-5 5"/></svg>Déconnecter tous les appareils</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div id="notice"></div>
+
+  <!-- HÉROS : chiffres clés + visites en 3D -->
+  <section class="panel glow pad">
+    <span class="eyebrow"><i></i>lorick-innovation.com · <span id="periodLbl">7 derniers jours</span></span>
+    <h1 class="big" id="hello">Bonjour Rodrigue.</h1>
+    <p class="lead" id="heroLead">Voici comment ton site a performé.</p>
+    <div class="kpis">
+      <div class="kpi"><div class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>Visites</div><div class="val tnum" id="kV">–</div><div class="foot" id="kVf"></div></div>
+      <div class="kpi"><div class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0"/><path d="M17 4a4 4 0 0 1 0 8M22 21a7 7 0 0 0-4-6.3"/></svg>Visiteurs uniques</div><div class="val tnum" id="kU">–</div><div class="foot" id="kUf"></div></div>
+      <div class="kpi"><div class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg>Temps moyen par visite</div><div class="val tnum" id="kT">–</div><div class="foot" id="kTf"></div></div>
+      <div class="kpi star"><div class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-13.3 7.9L3 21l1.1-4.7A9 9 0 1 1 21 12z"/></svg>Prises de contact</div><div class="val tnum" id="kC">–</div><div class="foot" id="kCf"></div></div>
+    </div>
+    <div class="stage bars" id="barsStage">
+      <div class="cap"><b>Visites jour par jour</b><span id="barsSub">Survole une barre pour le détail</span></div>
+      <div class="legend"><span><i style="background:#4D8BFF"></i>Visites</span><span><i style="background:#FFE100;border-radius:50%"></i>Contacts</span></div>
+      <div class="labels" id="barsLabels"></div>
+      <div class="tip" id="barsTip"></div>
+      <div class="hint">Glisse pour tourner</div>
+    </div>
+  </section>
+
+  <!-- ATTENTION : temps passé par section -->
+  <section class="panel light pad">
+    <span class="eyebrow"><i></i>Carte d'attention</span>
+    <h2 class="h">Où tes visiteurs <span class="hl">passent leur temps</span>.</h2>
+    <p class="lead">Chaque bloc est une section de ta page, de l'accueil (au fond) jusqu'à l'appel final (devant). Plus il est haut et chaud, plus on s'y attarde.</p>
+    <div class="att-grid">
+      <div class="stage att" id="attStage">
+        <div class="cap"><b>Ta page, en relief</b><span>Temps moyen passé par visite</span></div>
+        <div class="legend"><span><i style="background:linear-gradient(90deg,#0645C9,#4D8BFF,#FFE100);width:46px"></i>Froid → chaud</span></div>
+        <div class="tip" id="attTip"></div>
+        <div class="hint">Glisse pour tourner</div>
+      </div>
+      <div>
+        <div class="rank-h"><span>Section</span><span style="text-align:right">Temps moy.</span><span style="text-align:right">Vue par</span></div>
+        <div class="rank" id="rank"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="grid">
+    <div class="card w8"><h3>Du visiteur au contact</h3><p class="sub">Combien vont jusqu'au bout de la page… et t'écrivent.</p><div class="body funnel" id="funnel"></div></div>
+    <div class="card"><h3>Prises de contact</h3><p class="sub">Le bouton WhatsApp qui fait écrire.</p><div class="body" id="contactWhere"></div></div>
+
+    <div class="card w6"><h3>D'où ils viennent</h3><p class="sub">Les sources de ton trafic.</p><div class="body donut" id="sources"></div></div>
+    <div class="card w6"><h3>Combien de temps ils restent</h3><p class="sub">Répartition des visites selon leur durée.</p><div class="body hist" id="hist"></div></div>
+
+    <div class="card"><h3>Appareils</h3><p class="sub">Sur quoi on te lit.</p><div class="body devs" id="devs"></div></div>
+    <div class="card"><h3>Heures d'affluence</h3><p class="sub">Heure du Bénin.</p><div class="body" id="hours"></div></div>
+    <div class="card"><h3>Engagement</h3><p class="sub">Lecture réelle de ta page.</p><div class="body" id="engage"></div></div>
+
+    <div class="card"><h3>Pays</h3><p class="sub">Où se trouvent tes visiteurs.</p><div class="body list" id="countries"></div></div>
+    <div class="card"><h3>Sites qui t'envoient du monde</h3><p class="sub">Liens externes et moteurs.</p><div class="body bars2" id="refs"></div></div>
+    <div class="card"><h3>Sources qui convertissent</h3><p class="sub">Contacts obtenus par source.</p><div class="body bars2" id="convSrc"></div></div>
+
+    <div class="card w8"><h3>Derniers visiteurs</h3><p class="sub">En temps quasi réel.</p><div class="body list" id="recent"></div></div>
+    <div class="card"><h3>Derniers contacts</h3><p class="sub">Clics sur WhatsApp.</p><div class="body list" id="recentC"></div></div>
+
+    <div class="card w12"><h3>Sécurité de la console</h3><p class="sub" id="secSub">Tentatives de connexion récentes.</p><div class="body list" id="security"></div></div>
+  </div>
+
+  <p class="foot-note">Pour ne pas compter tes propres visites, ouvre une fois <code>lorick-innovation.com/?lk_ignore=1</code> sur chacun de tes appareils.</p>
+</main>
+<div class="demo-flag" id="demoFlag">APERÇU · DONNÉES FICTIVES</div>
+<script type="module" src="/assets/dash.js"></script>
+</body>
+</html>

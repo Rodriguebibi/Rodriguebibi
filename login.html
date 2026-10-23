@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#000000">
+<title>Console privée</title>
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/urbanist-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/console.css">
+</head>
+<body>
+<main class="login">
+  <form class="lg-card" id="f" novalidate autocomplete="on">
+    <div class="brand">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h4v12h10v4H4z"/></svg></span>
+      <span>Lorick<small>Console</small></span>
+    </div>
+    <h1>Accès <span class="hl">privé</span>.</h1>
+    <p class="sub">Entre ton mot de passe pour voir les statistiques de ton site.</p>
+
+    <!-- Champ invisible : seuls les robots le remplissent (ils sont alors bloqués). -->
+    <div class="hp" aria-hidden="true"><label>Site web <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+    <input type="text" name="username" value="lorick" autocomplete="username" hidden>
+
+    <div class="field">
+      <label for="pw">Mot de passe</label>
+      <input class="inp" id="pw" name="password" type="password" autocomplete="current-password" required maxlength="200" autofocus>
+      <button class="eye" type="button" id="eye" aria-label="Afficher le mot de passe">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+      </button>
+    </div>
+    <button class="btn" id="go" type="submit">Se connecter</button>
+    <p class="msg" id="msg" role="status" aria-live="polite"></p>
+    <div class="lg-foot">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.4 8.4-8 9-4.6-.6-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+      Connexion chiffrée · 5 essais puis blocage automatique
+    </div>
+  </form>
+</main>
+<script src="/assets/login.js" defer></script>
+</body>
+</html>
